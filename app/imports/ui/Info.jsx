@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFind, useSubscribe } from 'meteor/react-meteor-data';
+import { useTracker } from 'meteor/react-meteor-data';
 import { LinksCollection } from '../api/links';
 import { PeopleCollection } from '../api/PeopleCollection';
 

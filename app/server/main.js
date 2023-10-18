@@ -3,12 +3,12 @@ import { LinksCollection } from '/imports/api/links';
 import './PeopleInitialization';
 
 function insertLink({ title, url }) {
-  LinksCollection.insert({ title, url, createdAt: new Date() });
+  LinksCollection.insertAsync({ title, url, createdAt: new Date() });
 }
 
-Meteor.startup(async () => {
+Meteor.startup(() => {
   // If the Links collection is empty, add some data.
-  if (LinksCollection.find().count() === 0) {
+  if (LinksCollection.find().countAsync() === 0) {
     insertLink({
       title: 'Do the Tutorial',
       url: 'https://www.meteor.com/tutorials/react/creating-an-app',
